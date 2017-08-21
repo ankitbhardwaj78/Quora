@@ -1,0 +1,155 @@
+header{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  background-color:white;
+  border:1px solid black;
+  align-items: center;
+  justify-content:space-around;
+
+  div.logo{
+
+    img{
+      height:30px;
+    }
+  }
+  div.searchbar{
+    width:40%;
+    display:flex;
+    #searchTerm {
+      float: left;
+      flex-grow:1;
+      background:#f4f4f4;
+      border: 1px solid #b92b27;
+      padding: 5px;
+      height: 20px;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .searchTerm:focus{
+      color: #00B4CC;
+    }
+
+    .searchButton {
+      width: 20%;
+      height: 30px;
+      border: 1px solid #b92b27;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 20px;
+      background:white;
+    }
+
+    .searchButton:hover{
+      background:#b92b27;
+      color:white;
+    }
+
+    div.profile{
+      height:20px;
+
+    }
+
+
+
+  }
+
+
+}
+
+
+
+main{
+  display:flex;
+
+  leftside{
+    width:20%;
+  }
+
+  centercontainer{
+    width:50%;
+    div.questiontextarea{
+      display:flex;
+      div.field{
+        flex-grow:1;
+        #question_content{
+          margin-top:10px;
+          margin-left:20%;
+          width:80%;
+          height:60px;
+          font-size: 20px;
+          border-radius:5px;
+        }
+      }
+      div.actions{
+        width:10%;
+        #ask{
+          margin-top:10px;
+          height:60px;
+          width:100%;
+          background:white;
+          font-size:20px;
+          border:1px solid #b92b27;
+        }
+        #ask:hover{
+          background:#b92b27;
+          color:white;
+        }
+      }
+    }
+
+    #questions{
+      div.questions{
+        width:80%;
+        margin-left:20%;
+        padding-top:10px;
+        padding-bottom:10px;
+
+        background:white;
+        margin-top:10px;
+        border-radius:5px;
+        div.topbar{
+          display:flex;
+
+          div.img{
+            img{
+              height: 40px;
+              width: 40px;
+              border: 1px solid black;
+              border-radius: 20px;
+            }
+          }
+
+          div.questioncontent{
+            padding-left:10px;
+            flex-grow:1;
+            font-weight: bold;
+          }
+
+        }
+
+        a{
+          font-weight: bold;
+          font-family: Sans-Serif;
+          text-decoration:none;
+        }
+
+
+        a:hover{
+          font-weight:bold;
+          background:white;
+          color:red;
+          cursor:pointer;
+        }
+      }
+      div.information{
+        color:red;
+      }
+    }
+
+  }
+
+
+}

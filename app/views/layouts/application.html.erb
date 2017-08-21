@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QuoraFinal</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<header>
+	<div class="logo">
+		<%=image_tag 'logo.svg'%>
+	</div>
+	<div class="searchbar">
+		  <input type="text" id="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" class="searchButton">Search</button>
+	</div>
+	<div class="profile">
+
+	</div>
+
+</header>
+<body>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+
+	<%= yield %>
+
+</body>
+</html>

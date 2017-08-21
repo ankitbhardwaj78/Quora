@@ -1,0 +1,13 @@
+<div class="header">
+
+<%=@question.content%>
+
+</div>
+<main>
+  <div id="answer_#{question.id}">
+<%answer=@question.answers%>
+<%answer.each do |answer|%>
+<%=render 'answer',answer:answer%>
+<%end%>
+</div>
+</main>

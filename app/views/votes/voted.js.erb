@@ -1,0 +1,16 @@
+<%if @upvote%>
+$('#upvote_<%=@question_id%>').html("upvoted");
+<%else%>
+$('#upvote_<%=@question_id%>').html("upvote");
+
+<%end%>
+
+
+<%if @downvote%>
+$('#downvote_<%=@question_id%>').html("downvoted");
+
+<%else%>
+$('#downvote_<%=@question_id%>').html("downvote");
+<%end%>
+
+

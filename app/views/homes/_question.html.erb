@@ -1,0 +1,33 @@
+<div class="questions">
+   <div class="topbar">
+		<div class="img">
+			<img src="">
+		</div>
+		<div class="questioncontent">
+		<h1><%=link_to question.content,homes_show_path(id:question.id)%></h1>
+    <%if question.versions.count>0%>
+    <%= link_to 'Edited', homes_edited_path(id:question.id) %>
+    <%end%>
+		</div>
+	</div>
+	<div class="information">
+	Asked by:
+	</div>
+  <div class="bottombutton" >
+   <%=link_to question.can_upvote,url_for(controller: 'votes',action: 'voted',question_id:question.id,type:"upvote"),method: :post,id: "upvote_#{question.id}",remote:true%>
+    <%=link_to question.can_downvote,url_for(controller: 'votes',action: 'voted',question_id:question.id,type:"downvote"),method: :post,id: "downvote_#{question.id}",remote:true%>
+<button class="answerbutton">Answer</button>
+  </div>
+  <div class="bottombar" >
+	 <%= form_for :answer,url: {controller: 'answers',action: 'create'},method: :post,remote:true do |f| %>
+    <div class="field">
+      <%= f.text_field :content,id:"answer_content#{question.id}"%>
+    </div>
+    <div class="actions">
+      <%=f.hidden_field :Question_id,:value=>question.id%>
+      <%= f.submit %>
+    </div>
+    <% end %>
+	</div>
+</div>
+

@@ -1,0 +1,6 @@
+<% if @show_load_more%>
+<%=@offset%>
+<% @allquestion.each do |question| %>
+$('#questions').append("<%= escape_javascript (render 'homes/question', question:question,answer:Answer.new) %>");
+<% end %>
+<%end%>
