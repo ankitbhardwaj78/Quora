@@ -1,9 +1,5 @@
 $(document).ready(function() {
-    $(".bottombar").hide();
-    $(".answerbutton").click(function(){
-           console.log(event);
-        $(".bottombar").show();
-    });
+    
     $("#loadmore").click(function() {
 
     });

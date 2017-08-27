@@ -1,1 +1,2 @@
 $('#questions').prepend("<%= escape_javascript (render 'homes/question',question:@question,answer:Answer.new) %>")
+$('#question_content').val("")

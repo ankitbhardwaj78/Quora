@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+	 autocomplete :question, :content
   def index
 
 		respond_to do |format|
@@ -25,6 +26,21 @@ class HomesController < ApplicationController
 
 			end
   end
+
+def search_result
+
+
+end	
+
+def search
+title=params["question"]
+question=Question.find_by_content(title)
+unless question
+question="not found"	
+end
+return redirect_to '/homes/search_result'
+
+end
 
 def show
 	puts params

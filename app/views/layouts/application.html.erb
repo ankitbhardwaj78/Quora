@@ -4,19 +4,37 @@
 	<title>QuoraFinal</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
 	<%= csrf_meta_tags %>
 </head>
 <header>
 	<div class="logo">
 		<%=image_tag 'logo.svg'%>
 	</div>
-	<div class="searchbar">
+
+<div class="searchbar">
+<%=form_tag '/homes/search' do %>
+<%= autocomplete_field_tag 'question', '', autocomplete_question_content_homes_path, :size => 75 ,id:"searchTerm"%> 
+<%= submit_tag 'search',class: "searchButton"%>
+<%end%>
+</div>
+
+	<!-- <div class="searchbar">
 		  <input type="text" id="searchTerm" placeholder="What are you looking for?">
           <button type="submit" class="searchButton">Search</button>
-	</div>
+	</div> -->
 	<div class="profile">
 
 	</div>
+	<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
 
 </header>
 <body>

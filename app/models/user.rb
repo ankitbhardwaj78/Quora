@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :question
+  has_many :answer
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: {member: 0, editor: 2, moderator: 1, admin: 3}
+def as_json options=nil
+	UserSerializer.new(self).as_json
+end
 end

@@ -5,9 +5,19 @@ Rails.application.routes.draw do
   get 'homes/show'
   get 'homes/edited'
   post 'votes/voted'
-  get '/quora/index' => 'quora#index'
+  get 'quora/index' => 'quora#index'
+  get 'answer/index'
+  post 'answer/create'
+  post 'homes/search' => "homes#search"
+  post '/quora/create' => 'quora#create'
+  get '/homes/search_result'
   devise_for :users, :controllers => { registrations: 'registrations' }
    root to: "homes#index"
+
+resources :homes do
+  get :autocomplete_question_content, :on => :collection
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

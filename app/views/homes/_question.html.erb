@@ -5,10 +5,12 @@
 		</div>
 		<div class="questioncontent">
 		<h1><%=link_to question.content,homes_show_path(id:question.id)%></h1>
-    <%if question.versions.count>0%>
+  
+    <%if question.versions.count > 1 %>
     <%= link_to 'Edited', homes_edited_path(id:question.id) %>
     <%end%>
 		</div>
+    <%= link_to 'Edit', edit_question_path(question) %>
 	</div>
 	<div class="information">
 	Asked by:
@@ -21,11 +23,11 @@
   <div class="bottombar" >
 	 <%= form_for :answer,url: {controller: 'answers',action: 'create'},method: :post,remote:true do |f| %>
     <div class="field">
-      <%= f.text_field :content,id:"answer_content#{question.id}"%>
+      <%= f.text_field :content,class:"answer_content"%>
     </div>
     <div class="actions">
-      <%=f.hidden_field :Question_id,:value=>question.id%>
-      <%= f.submit %>
+      <%=f.hidden_field :question_id,:value=>question.id%>
+      <%= f.submit 'Post Answer'%>
     </div>
     <% end %>
 	</div>

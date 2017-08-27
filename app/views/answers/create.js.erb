@@ -1,2 +1,2 @@
-$('#answer_content<%= @question_id%>').val("");
+$('.answer_content').val("")
 $('#answer_<%= @question_id%>').prepend("<%= escape_javascript (render 'homes/answer',answer:@answer) %>");

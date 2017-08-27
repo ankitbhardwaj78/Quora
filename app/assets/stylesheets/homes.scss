@@ -8,8 +8,9 @@ header{
   justify-content:space-around;
 
   div.logo{
-
+width:20%;
     img{
+    padding-left:30px;
       height:30px;
     }
   }
@@ -17,8 +18,7 @@ header{
     width:40%;
     display:flex;
     #searchTerm {
-      float: left;
-      flex-grow:1;
+      width:60%;
       background:#f4f4f4;
       border: 1px solid #b92b27;
       padding: 5px;
@@ -48,6 +48,7 @@ header{
     }
 
     div.profile{
+  width:30%;
       height:20px;
 
     }
@@ -152,4 +153,25 @@ main{
   }
 
 
+}
+#ui-id-1{
+ 
+  width:20%;
+  border:1px solid #b92b27;
+  border-radius:10px;
+  background-color:#f4f4f4;
+  li{
+    border-radius:10px;
+    font-size:15px;
+    padding-left:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+   
+   text-decoration: none;
+    list-style: none;
+  }
+  li:hover{
+  background-color:white;
+  cursor:pointer;
+  }
 }
